@@ -1,0 +1,135 @@
+{
+    "knowledge_base": [
+      {
+        "title": "Overview",
+        "content": [
+          "Conflux is a public blockchain that combines high performance, security, and decentralization, making it suitable for applications like decentralized finance and gaming.",
+          "It employs a unique hybrid consensus mechanism (PoW + PoS) and an innovative Tree-Graph ledger structure to achieve up to 3,000 TPS and low confirmation latency.",
+          "The dual-space design includes Conflux Core Space and Conflux eSpace, which are interconnected through the CrossSpaceCall contract, enabling seamless communication and high scalability."
+        ]
+      },
+      {
+        "title": "Consensus Mechanism",
+        "content": [
+          "Conflux's hybrid PoW and PoS consensus ensures high security, throughput, and decentralization.",
+          "PoW miners produce blocks using the Tree-Graph algorithm, while PoS nodes provide finality by signing pivot blocks.",
+          "The hybrid mechanism mitigates the risk of 51% attacks and ensures the reliability and performance of the network."
+        ]
+      },
+      {
+        "title": "Economics",
+        "content": [
+          "Conflux's economic model supports participation and network growth while maintaining technological stability.",
+          "CFX tokens serve as the native currency for transactions, staking, and governance within the network.",
+          "The economic incentives include PoW mining rewards, PoS staking interest, and transaction fee distribution."
+        ]
+      },
+      {
+        "title": "CFX Tokenomics",
+        "content": [
+          "CFX tokens consist of smaller units called drips (1 CFX = 10^18 drips).",
+          "Initial phase distribution includes allocations for private investors, the Conflux Foundation, the genesis team, and community funds.",
+          "Operational phase rewards include PoW block rewards (1 CFX per block as of July 2024) and PoS staking interest (determined by DAO parameters).",
+          "Token burning mechanisms, such as storage point conversion and base fee burning, help mitigate inflation."
+        ]
+      },
+      {
+        "title": "Tree-Graph",
+        "content": [
+          "The Tree-Graph ledger structure allows Conflux to include concurrent blocks, enhancing security and throughput.",
+          "The GHAST chain selection rule is used to select forks based on mining power in subtrees, improving robustness against liveness attacks.",
+          "Blocks in the Tree-Graph contain both parent and reference edges, enabling efficient transaction ordering."
+        ]
+      },
+      {
+        "title": "Spaces",
+        "content": [
+          "Conflux Core Space is the primary blockchain network with the hybrid consensus mechanism and sponsorship features.",
+          "Conflux eSpace is fully compatible with Ethereum's EVM, allowing seamless migration of Ethereum smart contracts to the Conflux network.",
+          "The CrossSpaceCall contract enables atomic transfers and execution between Core Space and eSpace."
+        ]
+      },
+      {
+        "title": "Ecosystem",
+        "content": [
+          "The Conflux Network ecosystem includes diverse projects enhancing the utility and scalability of the platform.",
+          "Key projects include:",
+          "Swappi (https://swappi.io): An AMM/DEX for seamless token swapping.",
+          "Nucleon (https://www.nucleon.space): A liquid staking derivative platform maintaining staking liquidity.",
+          "Meson (https://meson.fi): A stablecoin cross-chain bridge for secure and seamless transactions.",
+          "Zero Gravity (https://portal.0g.ai): A cross-chain bridge with less than 1-second finality.",
+          "ConfluxHub (https://confluxhub.io): A platform for cross-space bridges, CFX staking, and governance."
+        ]
+      },
+      {
+        "title": "DAO Governance",
+        "content": [
+          "Conflux employs DAO governance to set key parameters for token distribution and burning.",
+          "Governed parameters include PoW base rewards, PoS interest rates, and burn proportions for storage points and transaction fees.",
+          "Governance decisions are implemented through the ParamsControl internal contract, with a frontend for on-chain voting."
+        ]
+      },
+      {
+        "title": "FAQs",
+        "content": [
+          "What is Conflux? Conflux is a high-performance public blockchain with a unique hybrid PoW-PoS consensus mechanism.",
+          "What are the main advantages of Conflux? High throughput, low confirmation latency, EVM compatibility, and dual-space design.",
+          "How does Conflux manage inflation? Through a combination of PoW and PoS issuance and token burning mechanisms."
+        ]
+      }
+    ],
+    "guidance_on_answers": {
+      "tone": "Polite, instructive, and concise",
+      "style": "Use clear language, avoid excessive jargon, and provide simple explanations for technical terms when used.",
+      "format": "Restate the question briefly and provide relevant information from the knowledge base. Reference sections for further reading if applicable."
+    },
+    "example_questions_and_answers": [
+      {
+        "question": "What is Conflux, and how does it stand out?",
+        "answer": "Conflux is a public blockchain that combines PoW and PoS consensus mechanisms, providing high throughput, low latency, and strong security. Its dual-space design enables interoperability between Core Space and eSpace for diverse applications."
+      },
+      {
+        "question": "What is the purpose of the Tree-Graph ledger structure?",
+        "answer": "The Tree-Graph allows Conflux to process concurrent blocks, enhancing throughput and security. Its GHAST chain selection rule ensures robustness against attacks while maintaining efficiency."
+      },
+      {
+        "question": "How does Conflux mitigate 51% attack risks?",
+        "answer": "By integrating PoS finality into its PoW consensus, Conflux prevents 51% attacks. PoS validators sign pivot blocks, ensuring that even if PoW miners attempt a rollback, the pivot block remains final."
+      },
+      {
+        "question": "What is the role of CFX in the Conflux ecosystem?",
+        "answer": "CFX is the native token used for transactions, staking, and governance. It incentivizes network participation and supports the platform's economic model."
+      },
+      {
+        "question": "What projects are part of the Conflux ecosystem?",
+        "answer": "The Conflux ecosystem includes Swappi (AMM/DEX), Nucleon (liquid staking), Meson (stablecoin bridge), Zero Gravity (cross-chain bridge), and ConfluxHub (staking and governance)."
+      },
+      {
+        "question": "What wallets can I use for the Conflux network?",
+        "answer": "You can use the official **Fluent Wallet**, designed specifically for Conflux Core Space and eSpace. Alternatively, MetaMask can also be configured for Conflux eSpace to interact with EVM-compatible smart contracts and tokens."
+      },
+      {
+        "question": "What is Fluent Wallet?",
+        "answer": "Fluent Wallet is the official wallet for the Conflux network. It provides an easy-to-use interface to manage CFX, tokens, and NFTs across Core Space and eSpace. Learn more at [Fluent Wallet](https://fluentwallet.com/)."
+      },
+      {
+        "question": "Can I use MetaMask with Conflux?",
+        "answer": "Yes, you can configure MetaMask to connect to Conflux eSpace, enabling interaction with EVM-compatible smart contracts and tokens on the Conflux network."
+      }
+    ],
+    "links": {
+      "docs": "https://developer.confluxnetwork.org/",
+      "website": "https://confluxnetwork.org/",
+      "blockchain_explorer": "https://confluxscan.io/",
+      "faq": "https://developer.confluxnetwork.org/faqs/",
+      "fluent_wallet": "https://fluentwallet.com/",
+      "projects": {
+        "Swappi": "https://swappi.io/",
+        "Nucleon": "https://www.nucleon.space/",
+        "Meson": "https://meson.fi/",
+        "Zero Gravity": "https://portal.0g.ai/",
+        "ConfluxHub": "https://confluxhub.io/"
+      }
+    }
+  }
+  
