@@ -1,0 +1,99 @@
+{
+    "knowledge_base": [
+      {
+        "title": "Overview",
+        "content": [
+          "<ProjectName> is a <brief description of the project>. It is designed to <describe the main functionality or purpose>. <Explain why the project is unique or beneficial>."
+        ]
+      },
+      {
+        "title": "How <ProjectName> Works",
+        "content": [
+          "Explain the process or mechanism of how the project operates.",
+          "Describe the key features or steps involved in interacting with the project."
+        ]
+      },
+      {
+        "title": "Key Advantages & Uniqueness",
+        "content": [
+          "Highlight the primary advantages of using the project.",
+          "Mention any unique features or innovations compared to competitors or alternatives."
+        ]
+      },
+      {
+        "title": "Security & Audits",
+        "content": [
+          "Explain the security measures in place to protect users.",
+          "Mention if the project has undergone any audits and the results."
+        ]
+      },
+      {
+        "title": "<ProjectName> DAO & Governance",
+        "content": [
+          "Describe the governance model, if applicable.",
+          "Explain how users can participate in governance decisions."
+        ]
+      },
+      {
+        "title": "Token Model: <TokenSymbol>",
+        "content": [
+          "Provide details about the token model, including tokenomics.",
+          "Describe the token’s use case and any associated rewards or benefits."
+        ]
+      },
+      {
+        "title": "Fees",
+        "content": [
+          "Explain any fees associated with using the platform.",
+          "Describe how these fees are allocated or used."
+        ]
+      },
+      {
+        "title": "Risks",
+        "content": [
+          "List potential risks associated with using the project.",
+          "Explain the measures taken to mitigate these risks."
+        ]
+      },
+      {
+        "title": "Technical Details",
+        "content": [
+          "Include specific technical details relevant to the project.",
+          "Explain any important mechanisms, such as smart contract operations or system architecture."
+        ]
+      },
+      {
+        "title": "About <ProjectName>",
+        "content": [
+          "Provide background information about the project.",
+          "Mention the team or organization behind the project."
+        ]
+      }
+    ],
+    "guidance_on_answers": {
+      "tone": "Polite, instructive, and concise",
+      "style": "Use clear language. Avoid jargon unless necessary, and if used, provide simple explanations. Always remain on-topic about the project unless the question explicitly asks for external comparisons or references.",
+      "format": "When answering, restate the question concisely if needed, then provide the most relevant section(s) from the knowledge base. Offer references to the appropriate sections for further reading if beneficial."
+    },
+    "example_questions_and_answers": [
+      {
+        "question": "What is <ProjectName>, and how does it work?",
+        "answer": "<ProjectName> is a <brief description>. It works by <describe the mechanism>. This makes it <explain the benefit or functionality>."
+      },
+      {
+        "question": "What are the key advantages of using <ProjectName>?",
+        "answer": "The key advantages of <ProjectName> include <list main benefits>. These features make it a valuable addition to the Conflux ecosystem."
+      },
+      {
+        "question": "Does <ProjectName> have any associated risks?",
+        "answer": "<ProjectName> is designed with user security in mind. However, risks include <list any potential risks>. The project has implemented measures such as <describe risk mitigation>. "
+      }
+    ],
+    "links": {
+      "docs": "<Link to project documentation>",
+      "twitter": "<Link to project Twitter>",
+      "telegram": "<Link to project Telegram>",
+      "website": "<Link to project website>"
+    }
+  }
+  

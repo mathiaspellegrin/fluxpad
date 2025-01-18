@@ -1,0 +1,129 @@
+{
+    "knowledge_base": [
+      {
+        "title": "Overview",
+        "content": [
+          "Nucleon is a liquid staking solution for Conflux PoS backed by industry-leading staking providers.",
+          "It aims to solve the problems of illiquidity, immovability, and accessibility in Conflux PoS staking—making staked CFX liquid and allowing participation with any amount of CFX.",
+          "When users stake with Nucleon, they receive xCFX, a token that represents their staked CFX plus accrued rewards. This allows stakers to maintain liquidity while also earning yields on the Conflux network."
+        ]
+      },
+      {
+        "title": "How Nucleon Works",
+        "content": [
+          "Users stake CFX into Nucleon and mint xCFX tokens at a 1:1 ratio (initially). Over time, xCFX represents more and more underlying CFX because staking rewards are compounded in real-time.",
+          "There are no lock-ups with Nucleon. However, Conflux PoS imposes a ~14-day withdrawal period once you initiate an unstake of CFX from xCFX.",
+          "A minimum deposit of 1 CFX is required to decrease DDoS risk."
+        ]
+      },
+      {
+        "title": "Key Advantages & Uniqueness",
+        "content": [
+          "Nucleon is the first liquid staking solution on Conflux eSpace (EVM-compatible environment on Conflux).",
+          "It is open-sourced, audited by Hacken, and aims to build the most robust liquid staking ecosystem on Conflux.",
+          "Staked rewards compound automatically, making Nucleon’s APY higher than most other PoS pools."
+        ]
+      },
+      {
+        "title": "Security & Audits",
+        "content": [
+          "Nucleon’s code is open-sourced and audited by Hacken.",
+          "Nucleon can be integrated with various Conflux eSpace wallets such as MetaMask, WalletConnect, TokenPocket, Ledger, and Fluent Wallet.",
+          "Staking on Conflux carries some risks (e.g., slashing). To mitigate this, Nucleon delegates staking across multiple trusted node operators and maintains a coverage fund."
+        ]
+      },
+      {
+        "title": "Nucleon DAO & Governance",
+        "content": [
+          "Nucleon uses a DAO structure for governance decisions. Proposals can be submitted for governance updates, treasury usage, or technical changes.",
+          "Proposal submissions follow a predefined structure, including title, summary, contact info, motivation, specifications, pros, and cons.",
+          "NUT is Nucleon’s governance token. Holding and staking NUT allows users to vote on proposals and boost staking interest rewards."
+        ]
+      },
+      {
+        "title": "Token Model: xCFX & NUT",
+        "content": [
+          "xCFX: An interest-bearing ERC-20 token representing staked CFX and accrued rewards. The supply is elastic, depending on how many users stake, and it continuously increases in value relative to CFX due to compounding rewards.",
+          "NUT: Nucleon’s governance token with a total supply of 300,000. It can be staked to participate in governance and earn boosted rewards."
+        ]
+      },
+      {
+        "title": "Fees",
+        "content": [
+          "Nucleon applies a 0% stake fee and a 10% fee on staking rewards.",
+          "These fees are allocated among the node service provider, the DAO, and a coverage fund.",
+          "Nucleon runs on Conflux eSpace, which features low gas fees, providing a cost-effective environment for staking and transactions."
+        ]
+      },
+      {
+        "title": "Risks",
+        "content": [
+          "Smart Contract Security: Nucleon’s open-source smart contracts are audited, but no code is 100% risk-free.",
+          "Conflux PoS Network Risk: Vulnerabilities in the Conflux PoS could lead to penalties or slashing.",
+          "Slashing Risk: Up to 100% of staked funds can be penalized if validators fail, but Nucleon mitigates this with multiple reputable node operators and coverage funds.",
+          "xCFX Price Risk: xCFX’s market price can fluctuate relative to its inherent value due to withdrawal restrictions and market conditions."
+        ]
+      },
+      {
+        "title": "Technical Details on xCFX Minting & Burning",
+        "content": [
+          "xCFX is minted when users stake CFX in Nucleon’s ExchangeRoom contract, and burned when users want to withdraw CFX.",
+          "After deployment, the ExchangeRoom is the sole minter of xCFX to ensure security and prevent abuse.",
+          "The owner proxy can be set to a zero address once the contract is stable, preventing further changes to the minter role."
+        ]
+      },
+      {
+        "title": "About Conflux Network",
+        "content": [
+          "Conflux is a fast, secure public blockchain that uses a Tree-Graph structure and the GHAST consensus to achieve high throughput and low finality latency.",
+          "It supports a PoW + PoS hybrid approach (with PoS finality) to reduce the risk of 51% attacks.",
+          "Conflux eSpace is EVM-compatible, allowing for easy deployment of Ethereum-based dApps."
+        ]
+      },
+      {
+        "title": "Conflux PoS",
+        "content": [
+          "CIP-43 introduced PoS finality to the Conflux network. Users can stake their CFX to PoS and earn rewards.",
+          "There is one PoS block generated approximately every minute, adding another layer of security and finality to the network.",
+          "Nucleon leverages Conflux PoS to generate staking rewards for xCFX holders."
+        ]
+      }
+    ],
+  
+    "guidance_on_answers": {
+      "tone": "Polite, instructive, and concise",
+      "style": "Use clear language. Avoid jargon unless necessary, and if used, provide simple explanations. Always remain on-topic about Nucleon or Conflux PoS, unless the question explicitly asks for external comparisons or references.",
+      "format": "When answering, restate the question concisely if needed, then provide the most relevant section(s) from the knowledge base. Offer references to the appropriate sections for further reading if beneficial."
+    },
+  
+    "example_questions_and_answers": [
+      {
+        "question": "What is Nucleon, and how does it benefit CFX stakers?",
+        "answer": "Nucleon is a liquid staking solution for Conflux PoS. It lets users stake their CFX and receive xCFX tokens in return, which remain liquid and can be used within DeFi. This means stakers earn rewards without locking up assets for the full duration, solving common issues like illiquidity and high minimum deposits."
+      },
+      {
+        "question": "How does the fee structure work in Nucleon?",
+        "answer": "Nucleon charges 0% on the principal staked and a 10% fee on staking rewards. These fees are distributed among the node service providers, the DAO, and a coverage fund."
+      },
+      {
+        "question": "Is there a lock-up period for my staked CFX?",
+        "answer": "While Nucleon itself doesn’t impose a direct lock-up, Conflux PoS requires ~14 days for withdrawals. Once you burn your xCFX, you must wait for that period to retrieve the underlying CFX."
+      },
+      {
+        "question": "What is the difference between xCFX and NUT tokens?",
+        "answer": "xCFX is an interest-bearing token representing staked CFX plus accrued rewards. NUT is Nucleon’s governance token; it can be staked to vote on proposals and boost staking returns."
+      },
+      {
+        "question": "Is Nucleon audited?",
+        "answer": "Yes. Nucleon has undergone audits by Hacken. Additionally, it’s open-source, allowing for ongoing community review to minimize security risks."
+      }
+    ],
+  
+    "links": {
+      "docs": "https://doc.nucleon.network/",
+      "twitter": "https://x.com/OfficialNucleon",
+      "telegram": "https://t.me/nucleonspace",
+      "website": "https://www.nucleon.space/"
+    }
+  }
+  
