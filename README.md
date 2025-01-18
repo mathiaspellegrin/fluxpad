@@ -137,14 +137,30 @@ To test FluxPad's features, multiple terminals are required:
 4. **Run the Main Test File**
    In the fourth terminal, execute the test file to interact with all available AI agents and test their functionalities:
    ```bash
+   node index.js
+   ```
+   
+5. **(Optional) Run Test.js**
+   You will be able to interract with the differnet agents trough a terminal easily.
+   ```bash
    node test.js
    ```
-
+   
 ### Notes:
 - Ensure the `.env` file is configured before running any of the scripts.
 - If you prefer not to use multiple terminals, you can use tools like `pm2` to manage and run all scripts concurrently in the background.
 - `fetchCandles.js` is essential for maintaining up-to-date market data, which the AI agents rely on for accurate analysis.
 - Each bot requires its own terminal to function independently, enabling seamless interaction across multiple platforms.
+  
+## Next Development Phase
+
+FluxPad's roadmap includes exciting new features to further enhance its capabilities:
+
+1. **Twitter listener Integration**: AI agents will listen to specific Twitter accounts and react dynamically to tweets. This will enable real-time engagement with social media updates and trends.
+2. **AI-Managed Trading Contracts**: A new trading contract will allow users to allocate funds to Debra, the AI trading agent, who will manage those funds based on user-defined strategies. This feature will provide automated, strategy-driven trading within the Conflux ecosystem.
+3. **Multiple AI Collaboration**: FluxPad will introduce advanced collaborative capabilities among AI agents. This feature will allow AI agents to share insights, combine functionalities, and deliver a holistic and coordinated user experience across tasks like market analysis, voting, and project recommendations.
+4. **Deeper Conflux Ecosystem Integration**: Expanding on current integrations, FluxPad will further embed its AI agents into the Conflux ecosystem. This includes direct support for emerging decentralized applications (dApps) and tighter integrations with Conflux-native tools and services.
+5. **Introduction of More AI Models**: FluxPad will expand its AI roster by integrating additional specialized models to handle diverse user needs, such as sentiment analysis for market predictions, multi-language support for a global user base, and advanced recommendation systems for DeFi projects.
 
 ## Contributing
 
