@@ -49,7 +49,7 @@ Ensure you have Node.js installed and set up your environment variables as descr
 
 1. Clone the FluxPad repository:
    ```bash
-   git clone https://github.com/yourusername/fluxpad.git
+   git clone https://github.com/mathiaspellegrin/fluxpad
    ```
 2. Navigate to the project directory:
    ```bash
