@@ -8,6 +8,7 @@ FluxPad is a multi-agent AI platform built on the Conflux blockchain. It streaml
 FluxPad is available at [https://fluxpad.org/](https://fluxpad.org/), providing users with a comprehensive online platform to interact with its powerful AI agents and explore the Conflux ecosystem.
 
 A demo of FluxPad is available at [https://youtu.be/zMIFPvWzAqU](https://youtu.be/zMIFPvWzAqU), showcasing its features and functionality.
+
 Structure: [https://excalidraw.com/#json=Nlokfw5MS6ragTlJ8GDp5,y-LhldPRmeIIKRjXBTGhoQ](https://excalidraw.com/#json=Nlokfw5MS6ragTlJ8GDp5,y-LhldPRmeIIKRjXBTGhoQ)
 
 FluxPad utilizes the following resources:
