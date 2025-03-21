@@ -1,107 +1,124 @@
 {
-    "knowledge_base": [
-      {
-        "title": "Overview",
-        "content": [
-          "FluxPad is a comprehensive platform for discovering, analyzing, and interacting with projects in the Conflux ecosystem.",
-          "The platform is community-driven, allowing users to vote for projects, ensuring that only the best and most promising initiatives receive attention.",
-          "It features curated project listings, AI-powered guidance, tools for market analysis, and capabilities for creating tokens and NFTs."
-        ]
-      },
-      {
-        "title": "Navigating FluxPad",
-        "content": [
-          "FluxPad's main navigation includes:",
-          "1. **Home**: An overview of the platform and latest updates.",
-          "2. **Ecosystem**: Explore the Conflux ecosystem, including project listings, tools, and insights.",
-          "3. **Token/NFT**: Create your own tokens or NFTs using user-friendly tools.",
-          "4. **Connect Wallet**: Link your wallet to vote for projects, create tokens or NFTs, and explore all features."
-        ]
-      },
-      {
-        "title": "AI Agents Overview",
-        "content": [
-          "FluxPad features five AI agents to assist users:",
-          "1. **Erza**: An AI agent specializing in the Conflux ecosystem. Assists users in exploring projects, platforms, and ecosystem features.",
-          "2. **Mathias**: A guide to navigating the FluxPad platform. Provides detailed and actionable guidance on using platform tools and features.",
-          "3. **Debra**: A market trends analyst offering real-time trading insights and token performance data.",
-          "4. **Aria**: An expert in token and NFT creation, guiding users in crafting tokens or designing AI-powered NFTs.",
-          "5. **Leo**: A social media reporter providing engaging updates about projects, trends, and tools on FluxPad, integrating insights from the other agents."
-        ]
-      },
-      {
-        "title": "Community-Driven Voting",
-        "content": [
-          "FluxPad is community-driven, allowing users to vote for projects they support.",
-          "Your votes help highlight the most promising and impactful projects within the Conflux ecosystem.",
-          "Voting is easy and requires connecting your wallet to participate in the decision-making process."
-        ]
-      },
-      {
-        "title": "Token and NFT Creation",
-        "content": [
-          "FluxPad enables users to create their own tokens and NFTs directly on the platform:",
-          "1. Use the **Token/NFT** section to access creation tools.",
-          "2. Work with **Aria** for AI-powered designs or token crafting guidance.",
-          "3. Deploy your creations on the Conflux ecosystem and integrate them into your projects."
-        ]
-      },
-      {
-        "title": "Discovering Projects",
-        "content": [
-          "FluxPad provides a curated list of projects within the Conflux ecosystem.",
-          "All listed projects undergo community evaluation through voting to ensure quality and relevance.",
-          "Users can explore project details, tokenomics, and potential use cases through AI-powered insights."
-        ]
-      },
-      {
-        "title": "Market Analysis",
-        "content": [
-          "FluxPad offers real-time market analysis through the **Debra (Market Trends Analyst)** AI agent:",
-          "1. Access trading graphs and token performance data.",
-          "2. Analyze trends and market conditions for Conflux projects.",
-          "3. Use insights to inform your investment or project strategies."
-        ]
-      },
-      {
-        "title": "How to Use FluxPad",
-        "content": [
-          "1. **Explore Projects**: Begin by exploring the **Ecosystem** section for curated project listings.",
-          "2. **Vote for Projects**: Support your favorite initiatives by voting for them to gain visibility and support.",
-          "3. **Connect Your Wallet**: Link your wallet to unlock voting, token creation, and other features.",
-          "4. **Create Tokens/NFTs**: Use the Token/NFT section to launch your project within the Conflux ecosystem."
-        ]
-      }
-    ],
-    "guidance_on_answers": {
-      "tone": "Polite, informative, and user-friendly",
-      "style": "Use clear and concise language, avoid excessive technical jargon, and focus on empowering users to engage with the Conflux ecosystem effectively.",
-      "format": "Address the user's question clearly and concisely, referencing a single parameter unless additional details are explicitly requested."
+  "knowledge_base": [
+    {
+      "title": "Overview",
+      "content": [
+        "FluxPad is a comprehensive platform for discovering, analyzing, and trading projects in the Conflux ecosystem.",
+        "The platform features curated project listings with security verification (KYC and Audit badges), AI-powered investment guidance, built-in liquidity pools, and capabilities for creating tokens and NFTs.",
+        "FluxPad aims to help users discover high-potential projects before they hit mainstream exchanges, while providing enhanced security protections and real-time trading functionality."
+      ]
     },
-    "example_questions_and_answers": [
-      {
-        "question": "What is FluxPad, and how can I use it?",
-        "answer": "FluxPad is a community-driven platform for discovering, voting on, and interacting with projects in the Conflux ecosystem. You can explore curated projects, analyze market trends, and create your own tokens or NFTs. To get started, connect your wallet and explore the platform's features."
-      },
-      {
-        "question": "How can I vote for projects on FluxPad?",
-        "answer": "Connect your wallet, navigate to the **Ecosystem** section, and select the project you wish to support. Cast your vote to help promising projects gain visibility and support."
-      },
-      {
-        "question": "Can I create my own tokens or NFTs on FluxPad?",
-        "answer": "Yes, FluxPad offers tools for token and NFT creation. Go to the **Token/NFT** section, and use **Aria** for AI-powered guidance. Once ready, deploy your creations on the Conflux ecosystem."
-      },
-      {
-        "question": "How does the community-driven voting system work?",
-        "answer": "Projects listed on FluxPad are evaluated by the community through voting. Users can vote for their favorite projects, ensuring that the most promising initiatives receive attention and support."
-      },
-      {
-        "question": "What makes FluxPad secure and reliable?",
-        "answer": "FluxPad emphasizes transparency and community involvement, ensuring all projects undergo evaluation and voting. Additionally, the platform is built with user security and privacy in mind."
-      }
-    ],
-    "links": {
-      "website": "https://fluxpad.org/"
+    {
+      "title": "Navigating FluxPad",
+      "content": [
+        "FluxPad's main navigation includes:",
+        "1. **Home**: An overview of the platform, its key features, and value proposition.",
+        "2. **Ecosystem**: Explore the Conflux ecosystem, including project listings, token swapping interface, and AI-powered insights.",
+        "3. **Create**: Design and launch your own tokens or NFTs using user-friendly tools.",
+        "4. **Connect Wallet**: Link your wallet to trade tokens, create digital assets, and access all platform features."
+      ]
+    },
+    {
+      "title": "AI Agents Overview",
+      "content": [
+        "FluxPad currently features three AI agents to assist users:",
+        "1. **Mathias**: A guide to navigating the FluxPad platform. Provides detailed and actionable guidance on using platform tools and features.",
+        "2. **Debra**: A market trends analyst offering personalized investment insights and token performance data. Available directly through the Ecosystem section.",
+        "3. **Leo**: A social media reporter providing engaging updates about projects, trends, and tools on FluxPad. Currently available only on social media channels."
+      ]
+    },
+    {
+      "title": "Security Features",
+      "content": [
+        "FluxPad emphasizes security and transparency through:",
+        "1. **KYC Verification**: Projects with this badge have verified team identities, reducing investment risks.",
+        "2. **Security Audits**: Projects with the Audited badge have undergone third-party code reviews to identify vulnerabilities.",
+        "3. **Transparent Listings**: All listed projects undergo vetting before appearing on the platform.",
+        "4. **Secure Wallet Connection**: Industry-standard wallet connection methods are used to ensure transaction security."
+      ]
+    },
+    {
+      "title": "Token and NFT Creation",
+      "content": [
+        "FluxPad enables users to create their own tokens and NFTs directly on the platform:",
+        "1. Use the **Create** section to access token and NFT creation tools.",
+        "2. Follow the intuitive interface to design your digital assets without technical knowledge.",
+        "3. Deploy your creations on the Conflux ecosystem and integrate them into your projects.",
+        "4. Access liquidity services and visibility within the FluxPad ecosystem."
+      ]
+    },
+    {
+      "title": "Trading Features",
+      "content": [
+        "FluxPad offers comprehensive trading functionality:",
+        "1. **Built-in Swap Interface**: Exchange tokens directly on the platform with minimal slippage.",
+        "2. **Liquidity Pools**: Access deep liquidity for efficient trading without external DEXs.",
+        "3. **Real-time Pricing**: View current token prices and trading data.",
+        "4. **Token Pairing**: Swap between various tokens in the Conflux ecosystem."
+      ]
+    },
+    {
+      "title": "Discovering Projects",
+      "content": [
+        "FluxPad provides a curated list of projects within the Conflux ecosystem:",
+        "1. **Hot Projects**: Featured established projects with verification badges.",
+        "2. **Presale Projects**: Upcoming token launches and early-stage opportunities (in development).",
+        "3. **AI-Powered Insights**: Personalized recommendations through Debra, the AI investment companion.",
+        "4. **Security Verification**: KYC and Audit badges to identify trustworthy projects."
+      ]
+    },
+    {
+      "title": "Market Analysis",
+      "content": [
+        "FluxPad offers investment guidance through the **Debra (Market Trends Analyst)** AI agent:",
+        "1. Access personalized investment insights tailored to your interests.",
+        "2. Analyze trends and market conditions for Conflux projects.",
+        "3. Receive AI-driven recommendations to inform your investment strategies.",
+        "4. Monitor token performance and market movements in real-time."
+      ]
+    },
+    {
+      "title": "How to Use FluxPad",
+      "content": [
+        "1. **Connect Your Wallet**: Link your wallet to access trading, token creation, and other features.",
+        "2. **Explore Projects**: Browse the **Ecosystem** section for curated project listings with security verification.",
+        "3. **Trade Tokens**: Use the swap interface to exchange tokens with minimal slippage.",
+        "4. **Create Digital Assets**: Use the Create section to launch tokens or NFTs within the Conflux ecosystem.",
+        "5. **Consult AI Companions**: Interact with Mathias for platform guidance and Debra for investment insights."
+      ]
     }
+  ],
+  "guidance_on_answers": {
+    "tone": "Polite, informative, and user-friendly",
+    "style": "Use clear and concise language, avoid excessive technical jargon, and focus on empowering users to engage with the Conflux ecosystem effectively.",
+    "format": "Address the user's question clearly and concisely, referencing a single parameter unless additional details are explicitly requested."
+  },
+  "example_questions_and_answers": [
+    {
+      "question": "What is FluxPad, and how can I use it?",
+      "answer": "FluxPad is a platform for discovering, trading, and creating digital assets in the Conflux ecosystem. You can explore curated projects with security verification, swap tokens through built-in liquidity pools, and create your own tokens or NFTs. To get started, connect your wallet and explore the platform's features with guidance from our AI companions."
+    },
+    {
+      "question": "How does FluxPad ensure project security?",
+      "answer": "FluxPad uses KYC and Audit verification badges to highlight projects that have undergone identity verification and security audits. This transparency allows you to make more informed investment decisions with reduced risk."
+    },
+    {
+      "question": "Can I create my own tokens or NFTs on FluxPad?",
+      "answer": "Yes, FluxPad offers tools for token and NFT creation through the Create section. The intuitive interface requires no technical knowledge, allowing you to design and deploy digital assets on the Conflux ecosystem quickly and easily."
+    },
+    {
+      "question": "What AI assistance is available on FluxPad?",
+      "answer": "FluxPad currently offers two AI companions on the platform: Mathias helps you navigate and use platform features, while Debra provides personalized investment insights and market analysis. Leo, our social media reporter, is available through our social channels."
+    },
+    {
+      "question": "How does token swapping work on FluxPad?",
+      "answer": "FluxPad features a built-in swap interface in the Ecosystem section. Simply select the tokens you want to exchange, enter the amount, and execute the trade. The platform accesses deep liquidity pools to ensure minimal slippage and efficient trading without requiring external DEXs."
+    }
+  ],
+  "links": {
+    "website": "https://fluxpad.org/",
+    "twitter/x": "https://x.com/leofluxpad",
+    "telegram": "https://t.me/fluxpadorg ",
+    "discord": "https://discord.gg/u6wcys633V"
   }
-  
+}
