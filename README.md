@@ -1,198 +1,90 @@
 # FluxPad
 
-Thought for a second
-FluxPad is a multi-agent AI platform built on the Conflux blockchain. It streamlines on-chain tasks through specialized AI agents that handle everything from token/NFT creation to real-time market analysis and automated social media updates. By integrating smart contracts, AI-driven functionalities, and various social platforms, FluxPad simplifies asset management, community governance, and ecosystem onboarding.
+Conflux gets a lot easier when you’re not clicking through every mint, vote, and chart yourself. FluxPad is a multi-agent setup that handles tokens, NFTs, voting, and market stuff—so you don’t have to.
 
-## Key Features
+## Why it exists
 
-FluxPad is available at [https://fluxpad.org/](https://fluxpad.org/), providing users with a comprehensive online platform to interact with its powerful AI agents and explore the Conflux ecosystem.
+Nobody wants to babysit the chain. You’ve got assets to mint, proposals to vote on, and markets that move while you’re asleep. FluxPad hands that off to a handful of AI agents that actually talk to your contracts and APIs—no duct tape required. One codebase drives the web app’s API, the Discord and Telegram and X bots, and whatever you’re doing on-chain.
 
-A demo of FluxPad is available at [https://youtu.be/zMIFPvWzAqU](https://youtu.be/zMIFPvWzAqU), showcasing its features and functionality.
+## What it does
 
-Structure: [https://excalidraw.com/#json=Nlokfw5MS6ragTlJ8GDp5,y-LhldPRmeIIKRjXBTGhoQ](https://excalidraw.com/#json=Nlokfw5MS6ragTlJ8GDp5,y-LhldPRmeIIKRjXBTGhoQ)
+- **API backend** — Express server. Chat endpoints for Erza, Mathias, Aria, and Debra. Your frontend hits this.
+- **Smart contracts** — FluxPadFactory (tokens/NFTs) and ProjectVoting, both on Conflux eSpace testnet.
+- **Agents** — Erza points people around the ecosystem. Mathias votes. Aria mints. Debra digs into markets. Leo handles the X/Twitter side.
+- **Bots** — Debra shows up on Discord and Telegram; Leo runs separately for X. Each is its own process.
+- **Market data** — `fetchcandles.js` grabs OHLCV from GeckoTerminal and dumps it into `project_candles/` so Debra has something to work with.
 
-FluxPad utilizes the following resources:
+## Architecture (high-level)
 
-- **Contracts:**
-  - Factory token/NFT creation: [View Contract](https://evmtestnet.confluxscan.net/address/0x8db86ab5c72b875af8c7b36a4d916f071e1c9a78?tab=contract-viewer)
-  - Vote contract: [View Contract](https://evmtestnet.confluxscan.io/address/0x2b77b6f8c5b7c7d5115df095d75a09238081ea7f?tab=contract-viewer)
-- **Community Channels:**
-  - Discord: [Join FluxPad Community](https://discord.gg/5ZhArVUzUT)
-  - Telegram bot: [@FluuxPadbot](https://t.me/FluuxPadbot)
-  - Leo X account: [Follow Leo on X](https://x.com/leofluxpad)
+- **index.js** — The Express API. Frontend and clients talk to it when they want to chat with an agent.
+- **handlers.js** — Where the agents actually do things (OpenAI + Conflux). Pulls from `characters/`, `knowledge/`, `projects.json`.
+- **Bots** — discordDebraBot.js, telegramDebraBot.js, xLeoBot.js. Separate processes—they don’t live inside the main server.
+- **fetchcandles.js** — Keeps candle data flowing for Debra.
 
-The AI agents in the demo use the following addresses:
+```
+Frontend  →  index.js  ↔  handlers.js  ↔  Conflux / OpenAI
+Bots and fetchcandles run as separate processes.
+```
 
-- **LEO_AI_AGENT**: `0x51741B5d4D28E2aA25d1366b0DdFc3681DB18Ec2`
-- **ERZA_AI_AGENT**: `0xf1d770cc446D5630D3eBC96f5D97e3561F65b30C`
-- **DEBRA_AI_AGENT**: `0x7791742f795ed16Ae35F0dD56054940dC81944f9`
-- **ARIA_AI_AGENT**: `0x287A89387892A3Bd28F972962a7E345340923AB9`
-- **MATHIAS_AI_AGENT**: `0x4BfDCf2e69a0cB3331812f6547AE5530217C6d35`
+More detail (and a proper diagram) lives in [docs/architecture.md](docs/architecture.md).
 
-In the near future, a dedicated server will be launched to allow developers to access the AI agents directly through endpoints. This server will be accessible at [https://fluxpad-database.com/](https://fluxpad-database.com/).
+## Quickstart
 
-- **Token & NFT Creation**: Easily mint tokens or NFTs via smart contracts or delegate to the AI agent (Aria).
-- **Market Analysis**: Track live price feeds with Debra and receive regular updates on Discord/Telegram.
-- **On-Chain Voting**: Vote on proposals directly or through Mathias, eliminating manual contract interactions.
-- **Social Media Updates**: Leo handles automated postings on Twitter (X) for project news.
-- **Conflux Ecosystem Guidance**: Erza offers tutorials and links for new users exploring the Conflux network.
+**You’ll need:** Node.js (LTS is the safe bet).
 
-Use FluxPad for a seamless, AI-powered experience in the Conflux ecosystem—from minting NFTs to coordinating community votes.
-
-## Getting Started
-
-### Prerequisites
-
-- Basic familiarity with blockchain and back-end development.
-
-Ensure you have Node.js installed and set up your environment variables as described in the Environment Variables section.
-
-### Installation
-
-1. Clone the FluxPad repository:
+1. Clone, then get your env in place:
    ```bash
    git clone https://github.com/mathiaspellegrin/fluxpad
-   ```
-2. Navigate to the project directory:
-   ```bash
    cd fluxpad
-   ```
-3. Install dependencies:
-   ```bash
+   cp .env.example .env
    npm install
    ```
-
-## Development and Technology Stack
-
-### Environment Variables
-
-The following environment variables are required for FluxPad's functionality. Ensure these are properly configured in a `.env` file:
-
-```
-OPENAI_API_KEY=
-PORT=
-DISCORD_BOT_TOKEN=
-DISCORD_CHANNEL_ID=
-TELEGRAM_BOT_TOKEN=
-TELEGRAM_CHANNEL_ID=
-XAI_API_KEY=
-DEBRA_PRIVATE_CFX_WALLET=
-LEO_PRIVATE_CFX_WALLET=
-ARIA_PRIVATE_CFX_WALLET=
-MATHIAS_PRIVATE_CFX_WALLET=
-ERZA_PRIVATE_CFX_WALLET=
-X_ACCESS_TOKEN=
-X_ACCESS_TOKEN_SECRET=
-X_API_KEY=
-X_API_SECRET_KEY=
-FLUXPAD_VOTING_CONTRACT_ADDRESS=0x2B77B6f8C5b7C7d5115dF095D75a09238081ea7f
-FLUXPAD_FACTORY_CONTRACT_ADDRESS=0x8DB86AB5C72b875Af8C7B36A4D916f071e1C9a78
-```
-
-### Back-End Logic
-
-The FluxPad platform's back-end leverages Node.js and Express.js to handle AI agent interactions, blockchain communication, and real-time data processing. Key functionalities include:
-
-- Context-aware responses from specialized AI agents.
-- Secure handling of user data and project information.
-- Integration with Conflux blockchain for smart contract execution and market analysis.
-- Automated periodic analysis of project trends and trading patterns.
-
-#### Key Files and Folders
-- **`index.js`**: The main server file. This terminal must always be running as it powers the bots and the xLeoBot functionalities.
-- **`projects.json`**: Contains the list of all projects tracked by FluxPad.
-- **`project_analyses.json`**: Stores the analysis data for the projects.
-- **`characters/`**: Contains `characters.json`, which defines the AI agent personalities and prompts.
-- **`knowledge/`**: Stores individual project knowledge files (e.g., `conflux.json`, `nucleon.json`), enabling AI agents to access detailed project-specific information.
-- **`handlers.json`**: Central file for managing the logic of all AI agents.
-
-Ensure these files and folders are properly configured and updated to maintain functionality.
-
-- **Frontend**: React.js (accessible trough the website)
-- **Backend**: Node.js, Express
-- **Blockchain**: Conflux eSpace
-- **AI Integration**: OpenAI API for AI agent functionality and Grok xai for Twitter
-
-### Usage
-
-To test FluxPad's features, multiple terminals are required:
-
-1. **Run `fetchCandles`**
-   In the first terminal, start the `fetchCandles` process by running:
+2. Crack open `.env` and drop in at least `OPENAI_API_KEY`—plus whatever else you need for the flows you care about. Full list’s in [docs/config.md](docs/config.md).
+3. Fire up the API:
    ```bash
-   node fetchCandles.js
+   npm run dev
    ```
-   This script fetches real-time OHLCV (Open, High, Low, Close, Volume) data from GeckoTerminal and stores it locally for analysis. Keep this terminal running to ensure continuous updates to the candle data.
+4. Want candles, Discord, or Telegram? Those are separate. See [docs/running.md](docs/running.md).
+5. Poke the agents from the terminal: `npm run test`.
 
-2. **Run the Discord Bot**
-   In the second terminal, run the Discord bot to enable AI-powered interactions via Discord:
-   ```bash
-   node discordDebraBot.js
-   ```
+**Something broke?** [docs/troubleshooting.md](docs/troubleshooting.md) has the usual suspects.
 
-3. **Run the Telegram Bot**
-   In the third terminal, start the Telegram bot to allow users to interact with Debra on Telegram:
-   ```bash
-   node telegramDebraBot.js
-   ```
+## Config
 
-4. **Run the Main Test File**
-   In the fourth terminal, execute the test file to interact with all available AI agents and test their functionalities:
-   ```bash
-   node index.js
-   ```
-   
-5. **(Optional) Run Test.js**
-   You will be able to interract with the differnet agents trough a terminal easily.
-   ```bash
-   node test.js
-   ```
-   
-### Notes:
-- Ensure the `.env` file is configured before running any of the scripts.
-- If you prefer not to use multiple terminals, you can use tools like `pm2` to manage and run all scripts concurrently in the background.
-- `fetchCandles.js` is essential for maintaining up-to-date market data, which the AI agents rely on for accurate analysis.
-- Each bot requires its own terminal to function independently, enabling seamless interaction across multiple platforms.
-  
-## Next Development Phase
+Env vars cover: API keys (OpenAI, xAI), server `PORT`, Discord/Telegram tokens and channel IDs, X API creds, each agent’s wallet key (testnet only), and contract addresses. The full list—with short descriptions—is in [docs/config.md](docs/config.md).
 
-FluxPad's roadmap includes exciting new features to further enhance its capabilities:
+## Deployment
 
-1. **Twitter listener Integration**: AI agents will listen to specific Twitter accounts and react dynamically to tweets. This will enable real-time engagement with social media updates and trends.
-2. **AI-Managed Trading Contracts**: A new trading contract will allow users to allocate funds to Debra, the AI trading agent, who will manage those funds based on user-defined strategies. This feature will provide automated, strategy-driven trading within the Conflux ecosystem.
-3. **Multiple AI Collaboration**: FluxPad will introduce advanced collaborative capabilities among AI agents. This feature will allow AI agents to share insights, combine functionalities, and deliver a holistic and coordinated user experience across tasks like market analysis, voting, and project recommendations.
-4. **Deeper Conflux Ecosystem Integration**: Expanding on current integrations, FluxPad will further embed its AI agents into the Conflux ecosystem. This includes direct support for emerging decentralized applications (dApps) and tighter integrations with Conflux-native tools and services.
-5. **Introduction of More AI Models**: FluxPad will expand its AI roster by integrating additional specialized models to handle diverse user needs, such as sentiment analysis for market predictions, multi-language support for a global user base, and advanced recommendation systems for DeFi projects.
+Nothing written down yet. When we do, it’ll live in [docs/deployment.md](docs/deployment.md).
+
+## Security notes
+
+Put every secret in `.env`—API keys, bot tokens, wallet keys. Don’t commit that file. Ever. Stick to testnet keys and tokens with the least permissions you can get away with. For how we handle vulns and more detail, see [SECURITY.md](SECURITY.md).
+
+## Proof / Demo
+
+- **Live:** [https://fluxpad.org/](https://fluxpad.org/)
+- **Demo video:** [https://youtu.be/zMIFPvWzAqU](https://youtu.be/zMIFPvWzAqU)
+- **Diagram:** [Excalidraw](https://excalidraw.com/#json=Nlokfw5MS6ragTlJ8GDp5,y-LhldPRmeIIKRjXBTGhoQ)
+
+How to run it yourself: [docs/demo.md](docs/demo.md).
+
+## Status
+
+**Prototype** (or bump this to Hackathon / Bounty submission / Production when it fits).
+
+- **What’s in place:** API and all four chat agents (Erza, Mathias, Aria, Debra), Discord/Telegram/X bots, the two Conflux contracts (Factory + Voting), and the candle pipeline.
+- **What’s next:** [docs/roadmap.md](docs/roadmap.md).
 
 ## Contributing
 
-This repository contains the back-end logic of FluxPad, making it a resource for developers who want to create similar projects or contribute to the development of FluxPad itself. By engaging with this repository, you can explore the architecture, test existing features, or expand its capabilities to further enhance the platform.
-
-We welcome contributions to enhance FluxPad. To contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add feature-name"
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Open a pull request.
+We take PRs. The drill’s in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+[MIT](LICENSE).
 
 ## Contact
 
-For questions, suggestions, or support, reach out via:
-
-- Discord (Direct): mathiaspel
+- Discord: mathiaspel | [FluxPad Community](https://discord.gg/5ZhArVUzUT)
 - Website: [mbp-enterprises.com](https://mbp-enterprises.com)
-

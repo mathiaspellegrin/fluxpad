@@ -68,7 +68,7 @@ const NFT_FACTORY_ABI = [
 ];
 
 export async function handlePublishNFT({ name, symbol, tokenURI }) {
-    if (!PRIVATE_KEY) {
+    if (!ARIA_PRIVATE_CFX_WALLET) {
       throw new Error("Private key not found in environment variables.");
     }
   
