@@ -1,8 +1,10 @@
 # Contracts and addresses
 
-Everything below is **Conflux eSpace testnet**. Don’t plug in mainnet keys or mainnet addresses when you’re developing. Seriously.
+This repo contains the **hackathon-era** contracts used by the agents (testnet). For the full Fluxpad contract suite, mainnet deployments, and integration guidelines, see **[Fluxpad/contracts](https://github.com/Fluxpad/contracts)** (FluxFactory, FluxTokenFactory, FluxNFTFactory, FluxTokenLockFactory, FluxRouter, WETH, etc.).
 
-## Contract addresses
+Everything below is **Conflux eSpace testnet**. Don’t use mainnet keys or mainnet addresses when developing against this repo.
+
+## Contract addresses (this repo — testnet)
 
 | Contract | Address | Explorer |
 |----------|---------|----------|
@@ -25,6 +27,10 @@ These are the Conflux addresses the AI agents use in the demo. When you run thin
 | DEBRA_AI_AGENT | `0x7791742f795ed16Ae35F0dD56054940dC81944f9` |
 | ARIA_AI_AGENT | `0x287A89387892A3Bd28F972962a7E345340923AB9` |
 | MATHIAS_AI_AGENT | `0x4BfDCf2e69a0cB3331812f6547AE5530217C6d35` |
+
+## Full contract suite and mainnet
+
+Mainnet deployments, ABIs, fee receivers, and integration examples (Conflux eSpace) are documented in the [Fluxpad/contracts](https://github.com/Fluxpad/contracts) repository.
 
 ## Community and bots
 

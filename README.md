@@ -1,18 +1,22 @@
 # FluxPad
 
-Conflux gets a lot easier when you’re not clicking through every mint, vote, and chart yourself. FluxPad is a multi-agent setup that handles tokens, NFTs, voting, and market stuff—so you don’t have to.
+Multi-agent platform on Conflux for tokens, NFTs, voting, and market data and on-chain actions, without manual intervention.
+
+**🏆 2nd place – Conflux Hackathon**
+
+This repo is the **initial (hackathon) version** of FluxPad. The frontend and product have evolved since; a significant part of the current codebase is private and will be open-sourced later.
 
 ## Why it exists
 
-Nobody wants to babysit the chain. You’ve got assets to mint, proposals to vote on, and markets that move while you’re asleep. FluxPad hands that off to a handful of AI agents that actually talk to your contracts and APIs—no duct tape required. One codebase drives the web app’s API, the Discord and Telegram and X bots, and whatever you’re doing on-chain.
+Assets to mint, proposals to vote on, markets to track. FluxPad delegates these to specialized AI agents that interact with smart contracts and external APIs. One codebase drives the web app’s API, the Discord and Telegram and X bots, and whatever you’re doing on-chain.
 
-## What it does
+## Core components
 
-- **API backend** — Express server. Chat endpoints for Erza, Mathias, Aria, and Debra. Your frontend hits this.
-- **Smart contracts** — FluxPadFactory (tokens/NFTs) and ProjectVoting, both on Conflux eSpace testnet.
-- **Agents** — Erza points people around the ecosystem. Mathias votes. Aria mints. Debra digs into markets. Leo handles the X/Twitter side.
-- **Bots** — Debra shows up on Discord and Telegram; Leo runs separately for X. Each is its own process.
-- **Market data** — `fetchcandles.js` grabs OHLCV from GeckoTerminal and dumps it into `project_candles/` so Debra has something to work with.
+- **API backend** — Express server with chat endpoints for Erza, Mathias, Aria, and Debra. Frontend talks to this.
+- **Smart contracts** — This repo ships hackathon-era testnet contracts (FluxPadFactory, ProjectVoting). Full contract suite, mainnet addresses, and integration details: [Fluxpad/contracts](https://github.com/Fluxpad/contracts).
+- **Agents** — Erza (ecosystem guidance), Mathias (voting), Aria (NFT creation), Debra (market analysis), Leo (X/Twitter).
+- **Bots** — Debra on Discord and Telegram; Leo as a separate process for X.
+- **Market data** — `fetchcandles.js` pulls OHLCV from GeckoTerminal into `project_candles/` for Debra’s analysis.
 
 ## Architecture (high-level)
 
@@ -30,24 +34,24 @@ More detail (and a proper diagram) lives in [docs/architecture.md](docs/architec
 
 ## Quickstart
 
-**You’ll need:** Node.js (LTS is the safe bet).
+**Requirements:** Node.js (LTS).
 
-1. Clone, then get your env in place:
+1. Clone and install:
    ```bash
    git clone https://github.com/mathiaspellegrin/fluxpad
    cd fluxpad
    cp .env.example .env
    npm install
    ```
-2. Crack open `.env` and drop in at least `OPENAI_API_KEY`—plus whatever else you need for the flows you care about. Full list’s in [docs/config.md](docs/config.md).
-3. Fire up the API:
+2. Edit `.env` with at least `OPENAI_API_KEY` (and other keys for the flows you need). Full list: [docs/config.md](docs/config.md).
+3. Run the API:
    ```bash
    npm run dev
    ```
-4. Want candles, Discord, or Telegram? Those are separate. See [docs/running.md](docs/running.md).
-5. Poke the agents from the terminal: `npm run test`.
+4. For candles, Discord, or Telegram, run those as separate processes. See [docs/running.md](docs/running.md).
+5. Test agents from the terminal: `npm run test`.
 
-**Something broke?** [docs/troubleshooting.md](docs/troubleshooting.md) has the usual suspects.
+**Troubleshooting:** [docs/troubleshooting.md](docs/troubleshooting.md).
 
 ## Config
 
@@ -55,11 +59,11 @@ Env vars cover: API keys (OpenAI, xAI), server `PORT`, Discord/Telegram tokens a
 
 ## Deployment
 
-Nothing written down yet. When we do, it’ll live in [docs/deployment.md](docs/deployment.md).
+See [docs/deployment.md](docs/deployment.md) (steps to be added when available).
 
 ## Security notes
 
-Put every secret in `.env`—API keys, bot tokens, wallet keys. Don’t commit that file. Ever. Stick to testnet keys and tokens with the least permissions you can get away with. For how we handle vulns and more detail, see [SECURITY.md](SECURITY.md).
+Keep all secrets in `.env` (API keys, bot tokens, wallet keys). Do not commit `.env`. Use testnet keys and least-privilege tokens. Responsible disclosure and details: [SECURITY.md](SECURITY.md).
 
 ## Proof / Demo
 
@@ -71,14 +75,16 @@ How to run it yourself: [docs/demo.md](docs/demo.md).
 
 ## Status
 
-**Prototype** (or bump this to Hackathon / Bounty submission / Production when it fits).
+**Hackathon prototype (2nd place, Conflux).** This is the initial version; frontend and features have changed since the hackathon, and part of the codebase remains private (to be made public later). Core architecture and contracts here are stable; agent logic and integrations continue to evolve.
 
-- **What’s in place:** API and all four chat agents (Erza, Mathias, Aria, Debra), Discord/Telegram/X bots, the two Conflux contracts (Factory + Voting), and the candle pipeline.
-- **What’s next:** [docs/roadmap.md](docs/roadmap.md).
+- **Solid:** API and agents (Erza, Mathias, Aria, Debra), Discord/Telegram/X bots, testnet contracts (Factory, Voting), candle pipeline.
+- **Next:** [docs/roadmap.md](docs/roadmap.md).
+
+**Contracts:** Mainnet deployments and full Fluxpad DeFi contract suite (FluxFactory, FluxTokenFactory, FluxNFTFactory, FluxTokenLockFactory, FluxRouter): [Fluxpad/contracts](https://github.com/Fluxpad/contracts).
 
 ## Contributing
 
-We take PRs. The drill’s in [CONTRIBUTING.md](CONTRIBUTING.md).
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
