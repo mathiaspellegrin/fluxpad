@@ -1,0 +1,33 @@
+# Minimal CI: install and smoke-test that the API server starts.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+
+      - name: Install
+        run: npm ci
+
+      - name: Smoke test (server starts)
+        env:
+          PORT: 3000
+          OPENAI_API_KEY: "sk-dummy"
+        run: |
+          node index.js &
+          sleep 8
+          curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:3000/ || exit 1
+          kill %1 2>/dev/null || true

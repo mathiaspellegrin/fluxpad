@@ -51,7 +51,7 @@ More detail (and a proper diagram) lives in [docs/architecture.md](docs/architec
 4. For candles, Discord, or Telegram, run those as separate processes. See [docs/running.md](docs/running.md).
 5. Test agents from the terminal: `npm run test`.
 
-**Troubleshooting:** [docs/troubleshooting.md](docs/troubleshooting.md).
+Quickstart works when these steps complete without error (with `.env` minimally filled). **Troubleshooting:** [docs/troubleshooting.md](docs/troubleshooting.md).
 
 ## Config
 
