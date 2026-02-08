@@ -28,6 +28,12 @@ jobs:
           OPENAI_API_KEY: "sk-dummy"
         run: |
           node index.js &
-          sleep 8
-          curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:3000/ || exit 1
-          kill %1 2>/dev/null || true
+          PID=$!
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            sleep 3
+            CODE=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:3000/ || true)
+            [ "$CODE" = "200" ] && break
+            [ $i -eq 10 ] && { echo "Server did not respond with 200 after 30s (last code: $CODE)"; kill $PID 2>/dev/null || true; exit 1; }
+          done
+          kill $PID 2>/dev/null || true
+          echo "Server responded with HTTP $CODE"

@@ -55,6 +55,10 @@ function createMockResponse() {
   return res;
 }
 
+app.get("/", (req, res) => {
+  res.status(200).json({ ok: true, service: "fluxpad" });
+});
+
 app.get("/api/startChat/:agent", (req, res) => {
   const { agent } = req.params;
   const validAgents = ["erza", "mathias", "aria", "debra"];
@@ -317,10 +321,14 @@ if (!fs.existsSync(analysisFilePath)) {
   };
   
   
-  // Run the analysis immediately upon server start
+  // Run the analysis immediately upon server start (non-blocking; errors must not crash the process)
   (async () => {
-    console.log("Performing initial analysis...");
-    await performAnalysis();
+    try {
+      console.log("Performing initial analysis...");
+      await performAnalysis();
+    } catch (err) {
+      console.error("Initial analysis failed (server still running):", err.message);
+    }
   })();
   
   // Schedule analysis every 5 minutes
